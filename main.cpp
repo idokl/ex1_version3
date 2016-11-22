@@ -1,3 +1,4 @@
+#include <string>
 #include <iostream>
 #include "Point.h"
 #include "Grid.h"
@@ -14,6 +15,7 @@ int main() {
     string sourcePointXString, sourcePointYString;
     string destinationPointXString, destinationPointYString;
 
+    //parsing of the input
     string::size_type commaPosition = inputString.find(",");
     string gridSize = inputString.substr(0, commaPosition);
     string sourceAndDestinationPoints = inputString.substr(commaPosition + 1);
@@ -43,12 +45,13 @@ int main() {
     Graph* g = new Grid(gridWidth,gridHeight);
     BfsAlgorithm bfs = BfsAlgorithm(g);
 
+    //finding the short path from startPoint to endPoint
     stack<Point> idealPath = bfs.navigate(startPoint, endPoint);
+    //print the path
     while (!idealPath.empty()) {
         Point pointOfIdealPath = idealPath.top();
         idealPath.pop();
-        cout << pointOfIdealPath;
-        cout << endl;
+        cout << pointOfIdealPath << endl;
     }
     delete g;
 return 0;

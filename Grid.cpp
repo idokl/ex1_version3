@@ -25,7 +25,6 @@ Grid::Grid(const Grid &grid) {
 queue<Point>* Grid::getNeighbors(Point p) {
     int x = p.getX();
     int y = p.getY();
-
     queue<Point>* neighbors = new queue<Point>();
     //if the point isn't in the graph, return null queue
     if ((x < 0) || (y < 0) || (x >= width) || (y >= height))
@@ -39,4 +38,15 @@ queue<Point>* Grid::getNeighbors(Point p) {
     if (y > 0)
         neighbors->push(this->vectorOfVerticalVectors[x][y-1]);
     return neighbors;
+}
+
+Grid::~Grid() {
+    /*
+    for (int i = 0; i < width; i++) {
+        vector<Point> pointsVectorToDelete = this->vectorOfVerticalVectors[i];
+        pointsVectorToDelete.erase(pointsVectorToDelete.begin(), pointsVectorToDelete.end());
+    }
+    this->vectorOfVerticalVectors.erase(vectorOfVerticalVectors.begin(),
+     vectorOfVerticalVectors.end());
+     */
 }

@@ -1,5 +1,4 @@
 #include "Point.h"
-#include <iostream>
 
 using namespace std;
 
@@ -14,12 +13,7 @@ int Point::getY() {
     return y;
 }
 
-//we can delete the function "print"
-void Point::print() const {
-    cout << "(" << x << "," << y << ")";
-}
-
-bool isAvailable() {
+bool Point::isAvailable() {
     return true;
 }
 
