@@ -16,7 +16,7 @@ using  namespace std;
 #include <queue>
 #include <set>
 #include <stack>
-#include "Point.h"
+#include "Node.h"
 #include "Grid.h"
 
 class BfsAlgorithm {
@@ -28,7 +28,7 @@ public:
     BfsAlgorithm(Graph *&theGraph);
     //return stack that maintains the points in the shortest path from "start" to "end".
     //(if no path from start to end, return empty stack).
-    stack<Point> navigate(Point start, Point end);
+    stack<Node> navigate(Node start, Node end);
 };
 
 #endif //EX1_BFS_H

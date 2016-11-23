@@ -9,7 +9,7 @@ set(SOURCE_FILES
     Grid.cpp
     Grid.h
     main.cpp
-        Point.cpp
-    Point.h Graph.cpp Graph.h)
+        Node.cpp
+        Node.h Graph.cpp Graph.h Point.cpp Point.h)
 
 add_executable(ex1__version_1_1 ${SOURCE_FILES})

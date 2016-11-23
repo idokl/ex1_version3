@@ -7,14 +7,14 @@
 #define EX1_GRAPH_H
 
 #include <queue>
-#include "Point.h"
+#include "Node.h"
 
 using namespace std;
 
 class Graph {
 public:
-    //return queue that maintain all the Points that have a direct access to the Point p
-    virtual queue<Point>* getNeighbors(Point p)=0;
+    //return queue that maintain all the Points that have a direct access to the Node p
+    virtual queue<Node>* getNeighbors(Node p)=0;
     //destructor
     virtual ~Graph();
 };

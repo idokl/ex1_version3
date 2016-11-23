@@ -7,7 +7,7 @@
 #ifndef EX1_GRID_H
 #define EX1_GRID_H
 
-#include "Point.h"
+#include "Node.h"
 #include "Graph.h"
 #include <iostream>
 #include <vector>
@@ -19,7 +19,7 @@ class Grid: public Graph {
 private:
     int width;
     int height;
-    vector< vector<Point> > vectorOfVerticalVectors;
+    vector< vector<Node> > vectorOfVerticalVectors;
 public:
     //constructor. m is the grid width, n is the grid height.
     Grid(int m,int n);
@@ -27,9 +27,9 @@ public:
     Grid(const Grid &grid);
     //destructor
     ~Grid();
-    //return queue of Points in the grid that are next to the Point p (four points at most)
+    //return queue of Points in the grid that are next to the Node p (four points at most)
     //the neighbors order is: left, up, right and down.
-    queue<Point>* getNeighbors(Point p);
+    queue<Node>* getNeighbors(Node p);
 };
 
 
