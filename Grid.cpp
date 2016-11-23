@@ -8,7 +8,7 @@ Grid::Grid(int m, int n) {
     for (int i = 0; i < width; i++) {
         vector<Node> verticalVectorOfPoints = vector<Node>();
         for (int j = 0; j < height; j++) {
-            Node p = Node(i, j);
+            Point p = Point(i, j);
             verticalVectorOfPoints.push_back(p);
         }
         vectorOfVerticalVectors.push_back(verticalVectorOfPoints);
@@ -23,8 +23,8 @@ Grid::Grid(const Grid &grid) {
 
 
 queue<Node>* Grid::getNeighbors(Node p) {
-    int x = p.getX();
-    int y = p.getY();
+    int x = (Point)p.getX();
+    int y = (Point)p.getY();
     queue<Node>* neighbors = new queue<Node>();
     //if the point isn't in the graph, return null queue
     if ((x < 0) || (y < 0) || (x >= width) || (y >= height))

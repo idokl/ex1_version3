@@ -23,11 +23,11 @@ public:
     //return true if this Node is passable. false otherwise (=if there is an obstacle in this point).
     bool isAvailable();
     //Points comparison according to the x and y coordinates
-    virtual operator==(const Node &p1) const = 0;
+    virtual bool operator==(const Node &p1) const = 0;
     //definition of ordering relation between Points in order to enable
     //data structures (like Map) to maintain them efficiently.
     //(the exact ordering relation, that we defined, doesn't matter)
-    bool operator<(const Node &p1) const;
+    virtual bool operator<(const Node &p1) const = 0;
     //overloading operator to print this Node (by cout) in the format: (x,y)
     friend ostream& operator <<(ostream& os, const Node &point);
 };
