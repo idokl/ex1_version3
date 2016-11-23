@@ -8,7 +8,7 @@
 
 #include "Node.h"
 
-class Point : Node{
+class Point : public Node{
 private:
     int x;
     int y;
