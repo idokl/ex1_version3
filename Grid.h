@@ -4,7 +4,6 @@
  * Its first Point is (0,0). Its last Point is (m-1,n-1).
  */
 
-
 #ifndef EX1_GRID_H
 #define EX1_GRID_H
 
