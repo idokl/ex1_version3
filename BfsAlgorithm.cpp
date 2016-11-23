@@ -1,7 +1,7 @@
 #include <map>
 #include "BfsAlgorithm.h"
 
-BfsAlgorithm::BfsAlgorithm(Graph *&theGraph) {
+BfsAlgorithm::BfsAlgorithm(Graph *theGraph) {
     graph = theGraph;
 }
 

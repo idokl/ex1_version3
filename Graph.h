@@ -15,8 +15,6 @@ class Graph {
 public:
     //return queue that maintain all the Points that have a direct access to the Node p
     virtual queue<Node>* getNeighbors(Node p)=0;
-    //destructor
-    virtual ~Graph();
 };
 
 #endif //EX1_GRAPH_H

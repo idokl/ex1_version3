@@ -18,6 +18,7 @@ public:
     int getX();
     //return the y coordinate of this Node
     int getY();
+    //return true if this Node is passable. false otherwise (=if there is an obstacle in this point).
     bool isAvailable();
 };
 
