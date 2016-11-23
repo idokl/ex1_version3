@@ -23,8 +23,8 @@ Grid::Grid(const Grid &grid) {
 }
 
 
-queue<Node>* Grid::getNeighbors(Node p) {
-    Point pNew = *((Point *)p.getValue());
+queue<Node>* Grid::getNeighbors(Node *n) {
+    Point pNew = *((Point *)n->getValue());
     int x = pNew.getX();
     int y = pNew.getY();
     queue<Node>* neighbors = new queue<Node>();

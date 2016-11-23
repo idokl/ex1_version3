@@ -28,7 +28,7 @@ public:
     BfsAlgorithm(Graph *theGraph);
     //return stack that maintains the points in the shortest path from "start" to "end".
     //(if no path from start to end, return empty stack).
-    stack<Node> navigate(Node start, Node end);
+    stack<Node> navigate(Node &start, Node &end);
 };
 
 #endif //EX1_BFS_H

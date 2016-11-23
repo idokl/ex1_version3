@@ -21,6 +21,11 @@ bool Point::isAvailable() {
     return true;
 }
 
+
+void* Point::getValue() {
+    return this;
+}
+
 bool Point::operator==(Node &other) {
     Point thisPoint = *((Point*)this->getValue());
     Point otherPoint = *((Point*)(other.getValue()));
@@ -38,5 +43,6 @@ bool Point::operator<(Node &other) {
 }
 
 ostream& operator <<(ostream& os, Node &point) {
-    return os << "(" << point.x << "," << point.y << ")";
+    Point thePoint = *((Point*)(point.getValue()));
+    return os << "(" << thePoint.getX() << "," << thePoint.getY() << ")";
 }

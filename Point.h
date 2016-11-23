@@ -21,6 +21,8 @@ public:
     //return true if this Node is passable. false otherwise (=if there is an obstacle in this point).
     bool isAvailable();
 
+    void *getValue();
+
     bool operator==(Node &other);
 
     bool operator<(Node &other);

@@ -5,7 +5,7 @@ BfsAlgorithm::BfsAlgorithm(Graph *theGraph) {
     graph = theGraph;
 }
 
-stack<Node> BfsAlgorithm::navigate(Node start, Node end) {
+stack<Node> BfsAlgorithm::navigate(Node &start, Node &end) {
     //initialization of variables
     //stack for the shortest path (between the given points) that this function will return
     stack<Node> path = stack<Node>();

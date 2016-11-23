@@ -14,7 +14,7 @@ using namespace std;
 class Graph {
 public:
     //return queue that maintain all the Points that have a direct access to the Node p
-    virtual queue<Node>* getNeighbors(Node p)=0;
+    virtual queue<Node>* getNeighbors(Node* n)=0;
 };
 
 #endif //EX1_GRAPH_H
