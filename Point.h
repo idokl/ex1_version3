@@ -20,6 +20,10 @@ public:
     int getY();
     //return true if this Node is passable. false otherwise (=if there is an obstacle in this point).
     bool isAvailable();
+
+    bool operator==(Node &other);
+
+    bool operator<(Node &other);
 };
 
 

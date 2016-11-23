@@ -21,17 +21,22 @@ bool Point::isAvailable() {
     return true;
 }
 
-bool Point::operator==(const Node &p1) const {
-    return((x==p1.x)&&(y==p1.y));
+bool Point::operator==(Node &other) {
+    Point thisPoint = *((Point*)this->getValue());
+    Point otherPoint = *((Point*)(other.getValue()));
+    return(thisPoint.getX()==otherPoint.getX()) && (thisPoint.getY()==otherPoint.getY());
 }
 
-bool Point::operator<(const Node &p1) const {
-    if ((x < p1.x) || ((x == p1.x) && (y < p1.y)))
+bool Point::operator<(Node &other) {
+    Point thisPoint = *((Point*)this->getValue());
+    Point otherPoint = *((Point*)(other.getValue()));
+    if ((thisPoint.getX() < otherPoint.getX()) ||
+            ((thisPoint.getX() == otherPoint.getX()) && (thisPoint.getY() < otherPoint.getY())))
         return true;
     else
         return false;
 }
 
-ostream& operator <<(ostream& os, const Node &point) {
+ostream& operator <<(ostream& os, Node &point) {
     return os << "(" << point.x << "," << point.y << ")";
 }

@@ -3,6 +3,7 @@
 #include "Node.h"
 #include "Grid.h"
 #include "BfsAlgorithm.h"
+#include "Point.h"
 
 using namespace std;
 
@@ -39,8 +40,8 @@ int main() {
     int destinationPointX = stoi(destinationPointXString);
     int destinationPointY = stoi(destinationPointYString);
 
-    Node startPoint = Node(sourcePointX,sourcePointY);
-    Node endPoint = Node(destinationPointX,destinationPointY);
+    Node* startPoint = new Point(sourcePointX,sourcePointY);
+    Node* endPoint = new Point(destinationPointX,destinationPointY);
 
     Graph* g = new Grid(gridWidth,gridHeight);
     BfsAlgorithm bfs = BfsAlgorithm(g);

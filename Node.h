@@ -15,13 +15,13 @@ class Node {
 public:
 
     //Points comparison according to the x and y coordinates
-    virtual bool operator==(const Node &p1) const = 0;
+    virtual bool operator==(Node &other) = 0;
     //definition of ordering relation between Points in order to enable
     //data structures (like Map) to maintain them efficiently.
     //(the exact ordering relation, that we defined, doesn't matter)
-    virtual bool operator<(const Node &p1) const = 0;
+    virtual bool operator<(Node &other) = 0;
     //overloading operator to print this Node (by cout) in the format: (x,y)
-    friend ostream& operator <<(ostream& os, const Node &point);
+    friend ostream& operator <<(ostream& os, Node &point);
     virtual void *getValue() = 0;
 };
 
