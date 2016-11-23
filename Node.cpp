@@ -2,8 +2,6 @@
 
 using namespace std;
 
-Node::Node(int xCoord, int yCoord): x(xCoord), y(yCoord) {
-}
 
 int Node::getX() {
     return x;

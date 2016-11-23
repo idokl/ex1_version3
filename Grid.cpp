@@ -1,4 +1,5 @@
 #include "Grid.h"
+#include "Point.h"
 
 using namespace std;
 
@@ -23,8 +24,9 @@ Grid::Grid(const Grid &grid) {
 
 
 queue<Node>* Grid::getNeighbors(Node p) {
-    int x = (Point)p.getX();
-    int y = (Point)p.getY();
+    Point pNew = *((Point *)p.getValue());
+    int x = pNew.getX();
+    int y = pNew.getY();
     queue<Node>* neighbors = new queue<Node>();
     //if the point isn't in the graph, return null queue
     if ((x < 0) || (y < 0) || (x >= width) || (y >= height))

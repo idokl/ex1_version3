@@ -11,11 +11,8 @@
 using namespace std;
 
 class Node {
-private:
-    int x;
-    int y;
+
 public:
-    Node(int x, int y);
     //return the x coordinate of this Node
     int getX();
     //return the y coordinate of this Node
@@ -30,6 +27,7 @@ public:
     virtual bool operator<(const Node &p1) const = 0;
     //overloading operator to print this Node (by cout) in the format: (x,y)
     friend ostream& operator <<(ostream& os, const Node &point);
+    virtual void *getValue() = 0;
 };
 
 

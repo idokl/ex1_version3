@@ -8,8 +8,17 @@
 
 #include "Node.h"
 
-class Point :: Node{
-    virtual bool operator==(const Node &p1) const;
+class Point : Node{
+private:
+    int x;
+    int y;
+public:
+    Point(int x, int y);
+    //return the x coordinate of this Node
+    int getX();
+    //return the y coordinate of this Node
+    int getY();
+    bool isAvailable();
 };
 
 
