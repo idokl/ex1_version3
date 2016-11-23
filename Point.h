@@ -6,8 +6,10 @@
 #define EX1_VERSION_1_1_POINT_H
 
 
-class Point :: Node{
+#include "Node.h"
 
+class Point :: Node{
+    virtual bool operator==(const Node &p1) const;
 };
 
 
