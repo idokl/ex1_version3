@@ -50,9 +50,10 @@ int main() {
     stack<Node<Point>> idealPath = bfs.navigate(startPoint, endPoint);
     //print the path
     while (!idealPath.empty()) {
-        Node<Point> pointOfIdealPath = idealPath.top();
+        Node<Point> nodeOfIdealPath = idealPath.top();
         idealPath.pop();
-        cout << (Point)(pointOfIdealPath.getValue()) << endl;
+        Point pointOfIdealPath = nodeOfIdealPath.getValue();
+        cout << pointOfIdealPath << endl;
     }
     delete g;
 return 0;

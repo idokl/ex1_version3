@@ -27,6 +27,9 @@ public:
 
     bool operator<(Node &other);
 */
+
+    friend ostream& operator <<(ostream& os, Point &point);
+
     bool operator<(Point &other);
 
     bool operator==(Point &other);
