@@ -46,3 +46,6 @@ ostream& operator <<(ostream& os, Node &point) {
     Point thePoint = *((Point*)(point.getValue()));
     return os << "(" << thePoint.getX() << "," << thePoint.getY() << ")";
 }
+
+
+

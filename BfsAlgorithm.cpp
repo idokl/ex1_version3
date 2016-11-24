@@ -17,7 +17,7 @@ stack<Node> BfsAlgorithm::navigate(Node &start, Node &end) {
     //(we have already know the shortest path from the start Node to them)
     set<Node> visitedPoints = set<Node>();
     //map that match to every visitedPoint its parent in the tree that the BFS build
-    map<Node, Node> parentOfPoint = map<Node, Node>();
+    map<Node*, Node*> parentOfPoint = map<Node*, Node*>();
     //map that match to every visitedPoint its distance from the start Node
     map<Node, int> distanceOfPoint = map<Node, int>();
     //(we could implement the function without the "visitedPoints" set and the "distanceOfPoint"
