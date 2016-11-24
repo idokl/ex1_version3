@@ -12,7 +12,6 @@ using namespace std;
 
 template <class T>
 class Node {
-private:
     T value;
 public:
     Node<T>(T value);
@@ -23,8 +22,8 @@ public:
     //(the exact ordering relation, that we defined, doesn't matter)
     virtual bool operator<(Node<T> &other);
     //overloading operator to print this Node (by cout) in the format: (x,y)
-    friend ostream& operator <<(ostream& os, Node &point);
-    virtual void *getValue() = 0;
+    //friend ostream& operator <<(ostream& os, Node &point);
+    T getValue();
 };
 
 

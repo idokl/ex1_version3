@@ -7,7 +7,7 @@ Grid::Grid(int m, int n) {
     width = m;
     height = n;
     for (int i = 0; i < width; i++) {
-        vector<Node> verticalVectorOfPoints = vector<Node>();
+        vector<Point> verticalVectorOfPoints = vector<Point>();
         for (int j = 0; j < height; j++) {
             Point p = Point(i, j);
             verticalVectorOfPoints.push_back(p);
@@ -23,22 +23,27 @@ Grid::Grid(const Grid &grid) {
 }
 
 
-queue<Node>* Grid::getNeighbors(Node *n) {
+queue<Node<Point>> Grid::getNeighbors(Node<Point> n) {
+    /*
     Point pNew = *((Point *)n->getValue());
     int x = pNew.getX();
     int y = pNew.getY();
-    queue<Node>* neighbors = new queue<Node>();
+     */
+    Point pNew = n.getValue();
+    int x = pNew.getX();
+    int y = pNew.getY();
+    queue<Node<Point>> neighbors = queue<Node<Point>>();
     //if the point isn't in the graph, return null queue
     if ((x < 0) || (y < 0) || (x >= width) || (y >= height))
         return neighbors;
     if (x > 0)
-        neighbors->push(this->vectorOfVerticalVectors[x-1][y]);
+        neighbors.push(this->vectorOfVerticalVectors[x-1][y]);
     if (y + 1 < height)
-        neighbors->push(this->vectorOfVerticalVectors[x][y+1]);
+        neighbors.push(this->vectorOfVerticalVectors[x][y+1]);
     if (x + 1 < width)
-        neighbors->push(this->vectorOfVerticalVectors[x+1][y]);
+        neighbors.push(this->vectorOfVerticalVectors[x+1][y]);
     if (y > 0)
-        neighbors->push(this->vectorOfVerticalVectors[x][y-1]);
+        neighbors.push(this->vectorOfVerticalVectors[x][y-1]);
     return neighbors;
 }
 

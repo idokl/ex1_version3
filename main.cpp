@@ -40,19 +40,19 @@ int main() {
     int destinationPointX = stoi(destinationPointXString);
     int destinationPointY = stoi(destinationPointYString);
 
-    Node* startPoint = new Point(sourcePointX,sourcePointY);
-    Node* endPoint = new Point(destinationPointX,destinationPointY);
+    Node<Point> startPoint(Point(sourcePointX, sourcePointY));
+    Node<Point> endPoint(Point(destinationPointX,destinationPointY));
 
-    Graph* g = new Grid(gridWidth,gridHeight);
-    BfsAlgorithm bfs = BfsAlgorithm(g);
+    Graph<Point>* g = new Grid(gridWidth,gridHeight);
+    BfsAlgorithm<Point> bfs(g);
 
     //finding the short path from startPoint to endPoint
-    stack<Node> idealPath = bfs.navigate(startPoint, endPoint);
+    stack<Node<Point>> idealPath = bfs.navigate(startPoint, endPoint);
     //print the path
     while (!idealPath.empty()) {
-        Node pointOfIdealPath = idealPath.top();
+        Node<Point> pointOfIdealPath = idealPath.top();
         idealPath.pop();
-        cout << pointOfIdealPath << endl;
+        cout << (Point)(pointOfIdealPath.getValue()) << endl;
     }
     delete g;
 return 0;

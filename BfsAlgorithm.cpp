@@ -1,11 +1,13 @@
 #include <map>
 #include "BfsAlgorithm.h"
 
-BfsAlgorithm::BfsAlgorithm(Graph *theGraph) {
-    graph = theGraph;
+template <class T>
+BfsAlgorithm<T>::BfsAlgorithm(Graph<T> *graph) : graph(graph) {
+    graph = graph;
 }
 
-stack<Node> BfsAlgorithm::navigate(Node &start, Node &end) {
+template <class T>
+stack<Node<T>> BfsAlgorithm<T>::navigate(Node<T> &start, Node<T> &end) {
     //initialization of variables
     //stack for the shortest path (between the given points) that this function will return
     stack<Node> path = stack<Node>();
@@ -17,7 +19,7 @@ stack<Node> BfsAlgorithm::navigate(Node &start, Node &end) {
     //(we have already know the shortest path from the start Node to them)
     set<Node> visitedPoints = set<Node>();
     //map that match to every visitedPoint its parent in the tree that the BFS build
-    map<Node*, Node*> parentOfPoint = map<Node*, Node*>();
+    map<Node, Node> parentOfPoint = map<Node, Node>();
     //map that match to every visitedPoint its distance from the start Node
     map<Node, int> distanceOfPoint = map<Node, int>();
     //(we could implement the function without the "visitedPoints" set and the "distanceOfPoint"
@@ -32,12 +34,12 @@ stack<Node> BfsAlgorithm::navigate(Node &start, Node &end) {
         Node current = pointsToLookForNeighbors.front();
         pointsToLookForNeighbors.pop();
         int currentDistance = distanceOfPoint.at(current);
-        queue<Node>* currentNeighbors = graph->getNeighbors(current);
+        queue<Node> currentNeighbors = graph->getNeighbors(current);
         //for each neighbor: check whether it has been visited.
         //if not, add it to our queue.
-        while (!currentNeighbors->empty()) {
-            Node neighbor = currentNeighbors->front();
-            currentNeighbors->pop();
+        while (!currentNeighbors.empty()) {
+            Node neighbor = currentNeighbors.front();
+            currentNeighbors.pop();
             bool theNeighborHasBeenVisited = (visitedPoints.find(neighbor) != visitedPoints.end());
             if (!theNeighborHasBeenVisited) {
                 visitedPoints.insert(neighbor);

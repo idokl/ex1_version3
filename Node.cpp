@@ -4,7 +4,7 @@
 
 #include "Node.h"
 template <class T>
-Node::Node<T>(T value) {
+Node<T>::Node(T value) {
     this->value = value;
 }
 
@@ -16,4 +16,9 @@ bool Node<T>::operator==(Node<T> &other) {
 template <class T>
 bool Node<T>::operator<(Node<T> &other) {
     return (this->value < other.value);
+}
+
+template <class T>
+T Node<T>::getValue() {
+    return this->value;
 }

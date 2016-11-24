@@ -8,7 +8,7 @@
 
 #include "Node.h"
 
-class Point : public Node{
+class Point {
 private:
     int x;
     int y;
@@ -22,10 +22,14 @@ public:
     bool isAvailable();
 
     void *getValue();
-
+/*
     bool operator==(Node &other);
 
     bool operator<(Node &other);
+*/
+    bool operator<(Point &other);
+
+    bool operator==(Point &other);
 };
 
 

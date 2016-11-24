@@ -19,16 +19,17 @@ using  namespace std;
 #include "Node.h"
 #include "Grid.h"
 
+template <class T>
 class BfsAlgorithm {
 private:
     //The graph that the BFS algorithm work on
-    Graph* graph;
+    Graph<T>* graph;
 public:
     //constructor
-    BfsAlgorithm(Graph *theGraph);
+    BfsAlgorithm(Graph<T>* graph);
     //return stack that maintains the points in the shortest path from "start" to "end".
     //(if no path from start to end, return empty stack).
-    stack<Node> navigate(Node &start, Node &end);
+    stack<Node<T>> navigate(Node<T> &start, Node<T> &end);
 };
 
 #endif //EX1_BFS_H

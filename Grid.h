@@ -9,17 +9,18 @@
 
 #include "Node.h"
 #include "Graph.h"
+#include "Point.h"
 #include <iostream>
 #include <vector>
 #include <queue>
 
 using namespace std;
 
-class Grid: public Graph {
+class Grid: public Graph<Point> {
 private:
     int width;
     int height;
-    vector< vector<Node> > vectorOfVerticalVectors;
+    vector< vector<Point> > vectorOfVerticalVectors;
 public:
     //constructor. m is the grid width, n is the grid height.
     Grid(int m,int n);
@@ -29,7 +30,7 @@ public:
     ~Grid();
     //return queue of Points in the grid that are next to the Node p (four points at most)
     //the neighbors order is: left, up, right and down.
-    queue<Node>* getNeighbors(Node *n);
+    queue<Node<Point>> getNeighbors(Node<Point> n);
 };
 
 
