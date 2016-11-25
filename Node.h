@@ -1,6 +1,7 @@
 /*
- * This class represents position of point in the plane.
- * It maintain the point's coordinates in the x axe and the y axe.
+ * This class represents vertex in a graph.
+ * The node maintains a value (that is type is T).
+ * the operators of the Node depends on the operators of its value.
 */
 
 #ifndef EX1_POINT_H
@@ -17,22 +18,18 @@ class Node {
     T value;
 public:
     Node(T value);
-    //Points comparison according to the x and y coordinates
+    //nodes comparison according to their values
     virtual bool operator==( Node<T> &other);
-    //definition of ordering relation between Points in order to enable
+    //definition of ordering relation between Nodes in order to enable
     //data structures (like Map) to maintain them efficiently.
     //(the exact ordering relation, that we defined, doesn't matter)
     virtual bool operator<(const Node<T> &other) const;
-    //overloading operator to print this Node (by cout) in the format: (x,y)
-    //friend ostream& operator <<(ostream& os, Node &point);
+    //return the value is maintained in the node
     T getValue();
 };
 
 template <class T>
-Node<T>::Node(T value) : value(value)
-{
-    //this->value = value;
-}
+Node<T>::Node(T value) : value(value) { }
 
 template <class T>
 bool Node<T>::operator==(Node<T> &other) {

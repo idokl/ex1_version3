@@ -1,6 +1,6 @@
 /*
- * This class represents set of points (vertices) and edges (edge is a connection
- * between pair of Points. the edges define the neighbors of every Point).
+ * This class represents set of nodes (vertices) and edges (edge is a connection
+ * between pair of Nodes. the edges define the neighbors of every Node).
 */
 
 #ifndef EX1_GRAPH_H
@@ -14,6 +14,7 @@ using namespace std;
 template <class T>
 class Graph {
 public:
+    virtual ~Graph() {}
     //return queue that maintain all the Points that have a direct access to the Node p
     virtual queue<Node<T>> getNeighbors(Node<T> n)=0;
 };

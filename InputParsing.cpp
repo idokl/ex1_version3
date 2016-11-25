@@ -1,7 +1,3 @@
-//
-// Created by ido on 25/11/16.
-//
-
 #include "InputParsing.h"
 
 InputParsing::InputParsing(string inputString) {

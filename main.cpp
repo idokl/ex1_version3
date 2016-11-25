@@ -3,7 +3,6 @@
 #include "Node.h"
 #include "Grid.h"
 #include "BfsAlgorithm.h"
-#include "Point.h"
 #include "InputParsing.h"
 
 using namespace std;

@@ -1,7 +1,3 @@
-//
-// Created by ido on 25/11/16.
-//
-
 #ifndef EX1_VERSION_1_1_INPUTPARSING_H
 #define EX1_VERSION_1_1_INPUTPARSING_H
 
