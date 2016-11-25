@@ -1,6 +1,7 @@
 #include <map>
 #include "BfsAlgorithm.h"
 
+/*
 template <class T>
 BfsAlgorithm<T>::BfsAlgorithm(Graph<T> *graph) : graph(graph) {
     graph = graph;
@@ -66,3 +67,4 @@ stack<Node<T>> BfsAlgorithm<T>::navigate(Node<T> &start, Node<T> &end) {
     }
     return path;
 }
+ */

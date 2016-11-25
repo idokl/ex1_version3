@@ -13,6 +13,7 @@ private:
     int x;
     int y;
 public:
+    //Point() {x=0; y=0; };
     Point(int x, int y);
     //return the x coordinate of this Node
     int getX();
@@ -30,7 +31,7 @@ public:
 
     friend ostream& operator <<(ostream& os, Point &point);
 
-    bool operator<(Point &other);
+    bool operator<(const Point &other) const;
 
     bool operator==(Point &other);
 };

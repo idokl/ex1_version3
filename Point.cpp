@@ -48,11 +48,13 @@ bool Point::operator==(Point &other) {
     return(thisPoint.getX()==otherPoint.getX()) && (thisPoint.getY()==otherPoint.getY());
 }
 
-bool Point::operator<(Point &other) {
+bool Point::operator<(const Point &other) const {
+    /*
     Point thisPoint = *((Point*)this->getValue());
     Point otherPoint = *((Point*)(other.getValue()));
-    if ((thisPoint.getX() < otherPoint.getX()) ||
-        ((thisPoint.getX() == otherPoint.getX()) && (thisPoint.getY() < otherPoint.getY())))
+     */
+    if ((x < other.x) ||
+        (x == other.x && (y < other.y)))
         return true;
     else
         return false;
