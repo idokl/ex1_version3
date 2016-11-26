@@ -40,5 +40,3 @@ queue<Node<Point>> Grid::getNeighbors(Node<Point> n) {
         neighbors.push(this->vectorOfVerticalVectors[x][y-1]);
     return neighbors;
 }
-
-Grid::~Grid() { }

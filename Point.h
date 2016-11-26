@@ -13,8 +13,8 @@ public:
     int getX();
     //return the y coordinate of this Point
     int getY();
-    //return true if this Point is passable. false otherwise (=if there is an obstacle in this
-    // Point).
+    //return true if this Point is passable.
+    // false otherwise (=if there is an obstacle in this Point).
     bool isAvailable();
     //oprator overloading for printing point in the form (x,y)
     friend ostream& operator <<(ostream& os, Point &point);
