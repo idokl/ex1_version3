@@ -7,7 +7,8 @@
 
 using namespace std;
 
-int main() {
+int main(int argc, char* argv[]) {
+
     //scan input string (gridWidth_gridHeight,startX_startY,endX_endY) and parse it
     string inputString;
     getline(cin, inputString);

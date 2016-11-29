@@ -6,8 +6,9 @@
 #define EX1_VERSION_1_1_TAXICENTER_H
 
 
-class taxiCenter {
-
+class TaxiCenter {
+public:
+    void orderATrip();
 };
 
 
